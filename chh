@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Surprise for My Love</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #ffccd4; /* Light pink background */
+            color: #4d2600; /* Dark brown text */
+            margin: 20px;
+        }
+
+        h1 {
+            color: #cc0066; /* Dark pink heading */
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        #loginFormContainer,
+        #contentContainer {
+            text-align: center; /* Center-align content */
+        }
+
+        #loginFormContainer {
+            display: block;
+            margin-top: 50px;
+        }
+
+        #contentContainer {
+            display: none;
+            margin-top: 50px;
+        }
+
+        #loveMessage {
+            font-size: 1.2em;
+            color: #ff3399; /* Pink text for love message */
+        }
+
+        #heartImage {
+            width: 100px;
+            height: auto;
+        }
+
+        #lovePoem {
+            font-style: italic;
+            font-size: 1.2em;
+            color: #cc0066; /* Dark pink text for love poem */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="loginFormContainer">
+        <h1>Login to My Heart</h1>
+        <form id="loginForm" onsubmit="validateLogin(event)">
+            <label for="username">Your Name:</label>
+            <input type="text" id="username" name="username" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <button type="submit">Unlock My Heart</button>
+        </form>
+    </div>
+
+    <div id="contentContainer" class="container">
+        <h1>Welcome, My Love!</h1>
+        <p id="loveMessage">You've successfully unlocked the door to my heart. I love you more than words can express.</p>
+        <!-- Replace the Base64 encoded image data with the actual Base64 encoded data of your impressive heart image -->
+        <img id="heartImage" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAWElEQVR42mJ8/5+CfmB2hDxAdsA/ACMFOaX1QDwAAAAASUVORK5CYII=" alt="Heart Image">
+        <p id="lovePoem">
+            In the garden of our love, blooms a flower so divine,
+            With every beat of my heart, forever, you'll be mine.
+            Your smile, a radiant sun, brightening my darkest day,
+            In your arms, my love, is where I always want to stay.
+        </p>
+    </div>
+
+    <script src="login.js"></script>
+    <script>
+        function validateLogin(event) {
+            event.preventDefault();
+
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username.toLowerCase() === 'charles' && password === 'love') {
+                alert('Login successful! Welcome to our love journey.');
+                // Show the main content and hide the login form
+                document.getElementById('loginFormContainer').style.display = 'none';
+                document.getElementById('contentContainer').style.display = 'block';
+            } else {
+                alert('Invalid credentials. Please try again to unlock my heart.');
+            }
+        }
+    </script>
+</body>
+</html>
